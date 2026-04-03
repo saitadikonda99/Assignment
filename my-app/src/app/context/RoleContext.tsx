@@ -1,8 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useState } from 'react';
+import { Role } from '../types';
 
-type Role = 'Admin' | 'User';
 
 interface RoleContextType {
   role: Role;
