@@ -1,0 +1,13 @@
+.DashboardLayout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.DashboardLayout__content {
+    flex: 1;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
