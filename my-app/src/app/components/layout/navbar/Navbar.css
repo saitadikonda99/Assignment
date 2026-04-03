@@ -1,87 +1,87 @@
-
 .NavbarComponent {
-    width: 100%;
-    padding: 1rem 0rem;
+  width: 100%;
+  padding: 1rem 0rem;
 }
 
 .NavbarComponent__in {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid rgb(232, 231, 231);
-    padding: 1rem 2rem;
-    border-radius: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(232, 231, 231);
+  padding: 1rem 2rem;
+  border-radius: 5px;
 }
 
 .navbar__one {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .navbar__one h1 {
-    font-size: 24px;
-    font-weight: 600;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .navbar__one img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .navbar__two {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .25rem;
-    background-color: rgb(232, 231, 231);
-    padding: .35rem .5rem;
-    border-radius: 1.5rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background-color: rgb(232, 231, 231);
+  padding: 0.35rem 0.5rem;
+  border-radius: 5px;
 }
 
 .navbar__link {
-    text-decoration: none;
-    color: black;
-    padding: .3rem .75rem;
-    border-radius: 1rem;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.navbar__link:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
+  text-decoration: none;
+  color: black;
+  padding: 0.3rem 0.75rem;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .navbar__link--active {
-    background-color: rgb(0, 0, 0);
-    color: white;
+  background-color: rgb(0, 123, 255);
+  color: white;
 }
 
+.navbar__link:hover {
+  background-color: rgb(195, 195, 195);
+  color: white;
+}
 .navbar__three {
-    width: fit-content;
-    display: flex;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  align-items: center;
 }
 
 .navbar__role-select {
-    background-color: rgb(232, 231, 231);
-    border: none;
-    border-radius: 1rem;
-    padding: .4rem .85rem;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    cursor: pointer;
-    outline: none;
+  background-color: rgb(232, 231, 231);
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 0.85rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  outline: none;
 }
 
 .navbar__role-select:hover {
-    background-color: rgb(215, 215, 215);
+  background-color: rgb(215, 215, 215);
 }

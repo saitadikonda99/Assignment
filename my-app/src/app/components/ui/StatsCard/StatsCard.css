@@ -1,0 +1,45 @@
+.StatsCard {
+  background-color: #ffffff;
+  border: 1px solid rgb(232, 231, 231);
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.StatsCard__label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.StatsCard__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.StatsCard__trend {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.StatsCard__trend--up {
+  color: #16a34a;
+}
+
+.StatsCard__trend--down {
+  color: #dc2626;
+}
+
+.StatsCard__sublabel {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 400;
+}
