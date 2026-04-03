@@ -1,5 +1,7 @@
 import { mockTransactions } from '../../data/mockData';
 import StatsCard from '../../components/ui/StatsCard/StatsCard';
+import BalanceTrend from '../../components/ui/BalanceTrend/BalanceTrend';
+import SpendingBreakdown from '../../components/ui/SpendingBreakdown/SpendingBreakdown';
 import './Home.css';
 
 const fmt = (n: number) =>
@@ -71,6 +73,10 @@ const page = () => {
         {statsCards.map((card) => (
           <StatsCard key={card.label} {...card} />
         ))}
+      </div>
+      <div className="HomePage__charts">
+        <BalanceTrend />
+        <SpendingBreakdown />
       </div>
     </div>
   );

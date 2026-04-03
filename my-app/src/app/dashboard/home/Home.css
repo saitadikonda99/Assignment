@@ -1,7 +1,25 @@
+.HomePage {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .HomePage__stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
+}
+
+.HomePage__charts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+    .HomePage__charts {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {
