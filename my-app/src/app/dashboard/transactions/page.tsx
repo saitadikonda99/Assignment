@@ -5,6 +5,7 @@ import { MdSearch, MdSwapVert, MdDeleteOutline, MdAdd } from 'react-icons/md';
 import { mockTransactions } from '../../data/mockData';
 import { Transaction } from '../../types/index';
 import { useRole } from '../../context/RoleContext';
+import AddTransactionModal from '../../components/ui/AddTransactionModal/AddTransactionModal';
 import './Transactions.css';
 
 const allCategories = Array.from(new Set(mockTransactions.map(t => t.category)));
@@ -22,6 +23,7 @@ const formatAmount = (t: Transaction) => {
 const page = () => {
   const { role } = useRole();
   const [transactions, setTransactions] = useState<Transaction[]>(mockTransactions);
+  const [showModal, setShowModal] = useState(false);
   const [search, setSearch]             = useState('');
   const [filterType, setFilterType]     = useState('all');
   const [filterCat, setFilterCat]       = useState('all');
@@ -52,7 +54,7 @@ const page = () => {
       <div className="TransactionsPage__header">
         <h1 className="TransactionsPage__title">Transactions</h1>
         {role === 'Admin' && (
-          <button className="TransactionsPage__add-btn">
+          <button className="TransactionsPage__add-btn" onClick={() => setShowModal(true)}>
             <MdAdd size={18} />
             Add Transaction
           </button>
@@ -152,6 +154,12 @@ const page = () => {
           </tbody>
         </table>
       </div>
+      {showModal && (
+        <AddTransactionModal
+          onClose={() => setShowModal(false)}
+          onAdd={(t) => setTransactions(prev => [t, ...prev])}
+        />
+      )}
     </div>
   );
 };
