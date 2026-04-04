@@ -21,8 +21,6 @@ const diffLabel = `${diff >= 0 ? '+' : ''}$${Math.abs(diff).toLocaleString('en-U
 const yFormatter = (v: number) =>
   v >= 1000 ? `$${(v / 1000).toFixed(0)}K` : `$${v}`;
 
-const tooltipFormatter = (value: number, name: string) =>
-  [`$${value.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, name === 'income' ? 'Income' : 'Expenses'];
 
 const BalanceTrend = () => {
   return (
@@ -65,7 +63,10 @@ const BalanceTrend = () => {
               width={45}
             />
             <Tooltip
-              formatter={tooltipFormatter}
+              formatter={(value) => {
+                const num = typeof value === 'number' ? value : 0;
+                return `$${num.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+              }}
               cursor={{ fill: 'rgba(0,0,0,0.04)' }}
               contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb', fontSize: 13 }}
             />

@@ -24,8 +24,6 @@ const radarData = Object.entries(categoryTotals).map(([category, amount]) => ({
   amount: Math.round(amount * 100) / 100,
 }));
 
-const tooltipFormatter = (value: number) =>
-  [`$${value.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, 'Spending'];
 
 const SpendingBreakdown = () => {
   return (
@@ -46,7 +44,10 @@ const SpendingBreakdown = () => {
               tick={{ fontSize: 12, fill: '#6b7280' }}
             />
             <Tooltip
-              formatter={tooltipFormatter}
+              formatter={(value) => {
+                const num = typeof value === 'number' ? value : 0;
+                return [`$${num.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, 'Spending'];
+              }}
               contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb', fontSize: 13 }}
             />
             <Radar
