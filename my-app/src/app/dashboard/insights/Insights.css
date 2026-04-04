@@ -1,0 +1,139 @@
+.InsightsPage {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.InsightsPage__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+/* ── Highlight cards ── */
+.InsightsPage__highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.InsightsPage__card {
+    background-color: #ffffff;
+    border: 1px solid rgb(232, 231, 231);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.InsightsPage__card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #374151;
+    margin-bottom: 0.4rem;
+}
+
+.InsightsPage__card-label {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.InsightsPage__card-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+}
+
+.InsightsPage__card-sub {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* ── Section card ── */
+.InsightsPage__section {
+    background-color: #ffffff;
+    border: 1px solid rgb(232, 231, 231);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.InsightsPage__section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111111;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(232, 231, 231);
+}
+
+/* ── Category breakdown ── */
+.InsightsPage__category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.InsightsPage__category-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.InsightsPage__category-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.InsightsPage__category-name {
+    font-size: 0.85rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.InsightsPage__category-amt {
+    font-size: 0.85rem;
+    color: #111111;
+    font-weight: 600;
+}
+
+.InsightsPage__bar-track {
+    width: 100%;
+    height: 7px;
+    background-color: #f3f4f6;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.InsightsPage__bar-fill {
+    height: 100%;
+    background-color: #111111;
+    border-radius: 99px;
+    transition: width 0.4s ease;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .InsightsPage__highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .InsightsPage__highlights {
+        grid-template-columns: 1fr;
+    }
+}
