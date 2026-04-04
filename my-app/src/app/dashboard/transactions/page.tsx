@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { MdSearch, MdSwapVert, MdDeleteOutline, MdAdd } from 'react-icons/md';
 import { mockTransactions } from '../../data/mockData';
 import { Transaction } from '../../types/index';
+import { useRole } from '../../context/RoleContext';
 import './Transactions.css';
 
 const allCategories = Array.from(new Set(mockTransactions.map(t => t.category)));
@@ -19,6 +20,7 @@ const formatAmount = (t: Transaction) => {
 };
 
 const page = () => {
+  const { role } = useRole();
   const [transactions, setTransactions] = useState<Transaction[]>(mockTransactions);
   const [search, setSearch]             = useState('');
   const [filterType, setFilterType]     = useState('all');
@@ -49,10 +51,12 @@ const page = () => {
     <div className="TransactionsPage">
       <div className="TransactionsPage__header">
         <h1 className="TransactionsPage__title">Transactions</h1>
-        <button className="TransactionsPage__add-btn">
-          <MdAdd size={18} />
-          Add Transaction
-        </button>
+        {role === 'Admin' && (
+          <button className="TransactionsPage__add-btn">
+            <MdAdd size={18} />
+            Add Transaction
+          </button>
+        )}
       </div>
 
       <div className="TransactionsPage__filters">
